@@ -35,13 +35,13 @@ kotlin {
         val desktopMain by getting
 
         androidMain.dependencies {
-            implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
         }
+
         commonMain.dependencies {
             implementation(compose.runtime)
             implementation(compose.foundation)
-            implementation(compose.material)
+            compileOnly(compose.material)
             implementation(compose.material3)
             implementation(compose.animation)
             implementation(compose.ui)
@@ -59,6 +59,7 @@ kotlin {
             implementation(libs.voyager.transition)
 
         }
+
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)
         }

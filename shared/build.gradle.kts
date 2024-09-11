@@ -28,9 +28,17 @@ kotlin {
 
         commonMain.dependencies {
             api(project.dependencies.platform(libs.koin.bom))
+            api(libs.kotlinx.datetime)
             api(libs.koin.core)
             api(libs.koin.core.coroutines)
+            api(libs.kotlinx.serialization.core)
             api(libs.kotlinx.serialization.json)
+            api(libs.napier)
+            implementation(libs.ktor.client.logging)
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.cio)
+            implementation(libs.ktor.client.contentNegotiation)
+            implementation(libs.ktor.serialization.json)
         }
     }
 }

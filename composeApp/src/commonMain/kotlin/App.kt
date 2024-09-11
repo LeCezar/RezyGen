@@ -44,12 +44,14 @@ import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.ui.tooling.preview.Preview
 import residencyexamgen.composeapp.generated.resources.Res
 import residencyexamgen.composeapp.generated.resources.compose_multiplatform
+import theme.RezyGenTheme
+
 
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 @Preview
 fun App() {
-    MaterialTheme {
+    RezyGenTheme {
         BottomSheetNavigator { bottomNavigator ->
             LaunchedEffect(Unit) {
                 bottomNavigator.show(FirstScreenDest("3"))
@@ -98,7 +100,7 @@ fun FooScreen() {
             Text("Click me!")
         }
         AnimatedVisibility(showContent) {
-            val greeting = remember { Greeting().greet() }
+            val greeting = remember { "Greeting" }
             Column(
                 Modifier.fillMaxWidth(),
                 horizontalAlignment = Alignment.CenterHorizontally
